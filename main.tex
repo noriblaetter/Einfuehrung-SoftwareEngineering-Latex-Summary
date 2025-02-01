@@ -1,0 +1,1241 @@
+\documentclass{book}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[a4paper, total={6in, 10in}, margin=2.3cm]{geometry}
+\title{Holy bible of ESE}
+\author{Nora Jasharaj}
+\date{\today}
+
+
+\begin{document}
+
+    \maketitle
+
+    \tableofcontents
+
+    \chapter{Anforderungsanalysen und Spezifikation}
+    \subsection{Definition}
+    Ein Statement, was die Bedingungen, Grenzen, Randbedingungen und Erwartungen vom Softwaresystem beschreibt.
+
+    \subsection{Funktionalität}
+    Funktion der Software = Beziehung zwischen Ein- und Ausgabe, im weiten Sinne auch das Zeitverhalten.
+    Alle Aufforderungen, die sich auf Funktion beziehen $\rightarrow$ funktionale Anforderungen (NFRs).
+    Abgrenzung aber unscharf z.B. bei Robustheit, Zeitverhalten, Bedienbarkeit oft als nichtfunktional klassifiziert.
+    Alle Aussagen zur Wartbarkeit $\rightarrow$ nicht funktional.
+    \subsection{Anwendungsdomänen}
+    Weil Software in allen Bereichen und verschiedenen Domänen benötigt wird. Anforderungsanalyse hängt am stärksten von der Domäne ab, aber vielleicht auch von Größe des Unternehmens, der Entwickler und Kunden. Bei manchen Produkten nur grobe textuelle Anforderungen festhalten, während z.B. bei einem Banksystem auch Gesetze auf bürokratischem Wege beschrieben werden müssen.
+    \subsection{Klassifikation der Anforderungen}
+    \begin{itemize}
+        \item Project Requirement
+        \item System Requirement
+        \item Process Requirement
+        \item Functional Requirement
+        \item Attribute
+        \item Constraint
+        \item Performance Requirement
+        \item Quality Requirement
+    \end{itemize}
+
+    \section{Spezifikation}
+    \subsection{Definition}
+    Zentrales Artefakt der Software. Dokumentation der essenziellen Anforderungen und der Benutzeroberfläche.
+    Strukturierte Kollektion der Anforderungen (Performance, Design, Attribute, Randbedingungen).
+
+    \subsection{Komponenten}
+    Vor der Erteilung des Auftrags muss festgelegt werden: \textbf{was} das System leisten soll, \textbf{welche} Qualitätseigenschaften gewollt sind und \textbf{welche} Kosten bei der Entwicklung entstehen.
+    Analysieren besteht aus Klassifizieren und Organisieren, Priorisieren und Verhandeln und Dokumentieren.
+    \begin{itemize}
+        \item Kunde/Marketing
+        \item Test
+        \item Arbeitsplanung
+        \item Klärung von Einwänden/Ansprüchen
+        \item Benutzungshandbuch
+        \item Re-implementierung
+        \item Entwurf und Implementierung
+    \end{itemize}
+
+    \subsection{Lasten und Pflichtenheft}
+    Lastenheft: problemorientiert und abstrakt (vom Auftraggeber)
+    Pflichtenheft: konkret, präzise, konsistent, abgestimmt, vollständig, messbar (vom Auftragnehmer)
+
+    \subsection{Ziel}
+    Ist- und Soll-Analyse festhalten.
+
+    \subsection{Prozess}
+    Besteht aus Sammeln, Analysieren, Spezifizieren und Validieren.
+    \subsection{Anforderungsquellen}
+    Domänenmodell, Bedürfnisse der Stakeholder, Aktuelle Organisation und Systeme, existierende Dokumente, Anforderungsbibliothek (wiederverwendbare Anforderungen), Anforderungsvorlage (vorgeschlagene Typen von Anforderungen).
+
+    \subsection{Befragung/ Story-writing workshop}
+    Sollte gut geplant sein und mit kontextfreien Fragen wie "Wer sind die Nutzer" einleiten.
+    Kunden, Nutzer und Entwickler setzen sich zusammen und schreiben User Stories.
+
+    \subsection{Personas}
+    Beschreiben vollkommen fiktive, aber realistische Personen/Nutzer:innen. Genutzt, um bei der Anforderungsanalyse leichter die Perspektive der Nutzer:innen zu bekommen und die passenden Anforderungen zu identifizieren. Es werden tatsächlich sehr detaillierte Vorstellungen der Personen entworfen.
+
+    \subsection{Spezifikationsmethoden}
+    \begin{itemize}
+        \item Zustandsmodell
+        \item Ablaufmodell
+        \item formales Modell
+        \item Strukturmodell
+        \item Datenmodell
+        \item Begriffsmodell
+        \item Anwendungsfälle
+        \item Strukturierter Text
+        \item textuell
+        \item Verteilungsmodell
+    \end{itemize}
+    \subsection{Wichtige Merkmale der Anforderungsspezifikation}
+    \begin{enumerate}
+        \item adäquat: beschreibt das, was der Kunde will, braucht.
+        \item vollständig: beschreibt alles, was der Kunde will, braucht.
+        \item widerspruchsfrei
+        \item verständlich für alle Beteiligten.
+        \item eindeutig.
+        \item prüfbar.
+        \item risikogerecht: Umfang umgekehrt proportional zum Risiko, das man eingehen will.
+    \end{enumerate}
+
+    \subsection{\textbf{INVEST}}
+    \begin{itemize}
+        \item \textbf{I}ndependent (um Auswahl der Abarbeitung zu erleichtern: ist es in sich abgeschlossen oder hängt die Erfüllung auch von anderen Komponenten ab bzw. ist verbunden?)
+        \item \textbf{N}egotiable (um nicht zu viel vorwegzunehmen, damit man im Gespräch mit Stakeholdern noch verfeinern kann: beschreiben sie, was umgesetzt werden soll und \textbf{nicht wie}, einem wird nichts vorgeschrieben)
+        \item \textbf{V}aluable (gibt es einen Mehrwert? Gegenbeispiel: unnötige Design Patterns vorgeschrieben, die z.B. gar nicht in dem Kontext passen)
+        \item \textbf{E}stimatable (fürs Team und Aufwand den Aufwand einschätzen können, klarer Umfang mit wenig unbekannten Einflüssen)
+        \item \textbf{S}ized Appropriately (gut beschrieben, aber braucht trotzdem ein Jahr wäre eine schlechte Anforderung, weil braucht ja dennoch so lange), im Sprint durchsetzbar?
+        \item \textbf{T}estable (gute Akzeptanzkriterien definieren, man kann es testen, weil klar auch beschrieben wurde, wann sie erfolgreich umgesetzt wurde), Soll und Ist- Zustand vergleichbar?
+    \end{itemize}
+
+    \subsection{Begriffslexikon}
+    Wird bei der Analyse angelegt, enthält die Definitionen.
+
+    \section{Use cases}
+    \subsection{Definition}
+    Dt: Anwendungsfall.
+    \begin{itemize}
+        \item neben dem System ist immer mindestens ein Akteur:in beteiligt.
+        \item Anstoß durch einen \textbf{Trigger/spezielles Ereignis}, den die Hauptakteur:in auslöst.
+        \item ist \textbf{zielorientiert}
+        \item beschreibt alle Interaktionen zwischen dem System und den beteiligten Akteur:innen.
+        \item endet, wenn das angestrebte Ziel erreicht ist oder klar ist, dass es nicht mehr erreicht werden kann.
+    \end{itemize}
+    Beschreiben also \textbf{Außensicht}, was das System leisten soll und welche Interaktionen dazu notwendig sind.
+    Benötigt immer:
+    \begin{itemize}
+        \item Name
+        \item Ziel
+        \item Vorbedingung
+        \item Nachbedingung
+        \item Nachbedingung im Sonderfall
+        \item Akteure
+        \item Normalablauf
+    \end{itemize}
+    \subsection {\textbf{Anwendungsfalldiagramm}}
+    Unterscheidung zwischen \textbf{Hauptfunktionen} und \textbf{Basisfunktionen}.
+    Hauptfunktionen: beschreiben die geforderte fachliche Funktionalität des Systems.
+    Basisfunktionen werden in Hauptfunktionen verwendet und liefern dort Beitrag zur Funktionalität.
+    Anwendungsfälle sind Pakete.
+    \textbf{Vorteile:}
+    \begin{itemize}
+        \item zeigt, welche Akteure in welchen Anwendungsfällen mit dem System interagieren
+        \item sehr übersichtlich bei kleinen Modellen
+        \item gute Grundlage für Testfälle, Prototypen, Benutzungsdokumentation.
+    \end{itemize}
+    \textbf{Nachteile:}
+    \begin{itemize}
+        \item modelliert Zusammenhänge zwischen Anwendungsfällen nur rudimentär.
+        \item modelliert eigentliche Inhalte der Anwendungsfälle nicht.
+    \end{itemize}
+    \subsection{Nachteile bei gezwungener gleicher Granularität am Anfang}
+    \begin{itemize}
+        \item geringstes Wissen am Anfang.
+        \item Aufwand für nicht umgesetzte Anforderungen.
+        \item große Änderungskosten
+        \item weniger Gespräche, da Anforderungen bereits "fertig".
+    \end{itemize}
+    \subsection{Definition of done}
+    Design reviewed.
+    Code completed (refactored, in standard format, inspected).
+    User documentation updated.
+    Tested.
+    Zero known defects.
+    Acceptance tested.
+    Live on production servers.
+
+    \subsection{\textbf{Außerdem wichtig für den Entwurf abgesehen von den Anforderungn (HIER falls du es nicht findest :))}}
+    \begin{itemize}
+        \item Nutzerrollen
+        \item Zugriffskonzept
+        \item Art der Datenspeicherung
+        \item System und Softwarearchitektur
+        \item Design-Prinzipien (SOLID, DRY, KISS, YAGNI)
+        \item Datenmodell
+        \item UI und UX
+        \item Sicherheit
+        \item Performance
+        \item Testbarkeit
+        \item Wartbarkeit
+        \item Aufteilung der Arbeitspakete
+    \end{itemize}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.75\linewidth]{usa case diagramm.png}
+        \caption{Use case table}
+        \label{fig:enter-label}
+    \end{figure}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.75 \linewidth]{Normalablauf.png}
+        \caption{Normalablauf}
+        \label{fig:enter-label}
+    \end{figure}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.75\linewidth]{gqijepkrplg.png}
+        \caption{Sonderfälle}
+        \label{fig:enter-label}
+    \end{figure}
+
+
+    \chapter{Grundbegriffe}
+    \section{Geschichte des Softwareengineering}
+    \subsection{Softwarekrise}
+    Ca. Ende 60er Jahre: Wandel, da Kosten von Software die bis dahin Kosten von Hardware übernommen hat. Zuvor Software nur zur Behebung von Hardwareausfällen. Software wurde also komplexer, es fehlten Methoden, Kommunikationsprobleme, mangelnde Qualitätssicherung.
+    \textbf{Folgen:} Software Schwachpunkt des Gesamtsystems. Vertrauensverlust, steigende Kosten, Innovationsschub.
+    \textbf{Lösung:} Modularisierung, bessere Qualitätssicherung, agile Methoden und strukturierte Vorgehensweise.
+
+    \subsection{Beiträge der Frühzeit}
+    \begin{itemize}
+        \item "Entdeckung" des Software Life Cycles (1970)
+        \item Überlegung zur Strukturierung der Programme (Parnas, 1972)
+        \item Sammlung empirischer Daten (Boehm et al, 1973) zum besseren Verständnis der Kosten-Ursachen und der Kosten-Verteilung.
+    \end{itemize}
+
+    \subsection{Definition Software Engineering}
+    Die Entdeckung und Anwendung solider Ingenieur-Prinzipien mit dem Ziel, auf wirtschaftliche Art Software zu bekommen, die zuverlässig ist und auf realen Rechnern läuft.
+    Jede Aktivität, bei der es um die Erstellung oder Veränderung von Software geht, soweit mit der Software selbst hinausgehend.
+
+    \subsection{Ziele von Software Engineering als globale Optimierung}
+    \begin{itemize}
+        \item Gesamtkosten senken (z.B. Spezifikationen oder Architekturentwurf weglassen, aber dann bei Wartung deswegen große Probleme, also nein) $\rightarrow$ globales Optimum suchen
+        \item Effizienteres Bild der Kosten und ihrer Beziehungen entwickeln, um dem Optimum zu nähern.
+    \end{itemize}
+    \subsection{Software Engineering als defensive Disziplin}
+    Dient nur der Verhinderung von Schäden und Abwehr von Schäden.
+    \subsection{Shu-Ha-Ri}
+    Shu (gehorchen) zu ha (abweichen) zu ri (separieren). Anfangs sollte man also die Techniken genauso nachahmen, wie es die Meister vorgeben. Dann leicht abweichen und erst wenn man selbst Meister:in ist, sollte man sich ganz von den Vorgaben lösen.
+    \section{Muster}
+    \subsection{Muster}
+    Etwas mit Wiedererkennungswert, das eine bestimmte Art zu Denken, Verhalten oder Gestaltebene beschreibt.
+
+    \subsection{Muster im Software Engineering}
+    \begin{itemize}
+        \item Entwurfsmuster
+        \item Antimuster
+        \item Prozessmuster
+        \item Analysemuster
+        \item Testmuster
+        \item Architekturmuster
+        \item Muster im Softwarekonfiugurationsmanagement
+    \end{itemize}
+    \subsection{\textbf{MVC} Model-View Controller}
+    Muster bei dem Daten (\textit{Model}), Darstellung/UI(\textit{View}), und Steuerung/Brain (\textit{Controller}) getrennt \\werden.
+    \subsection{Artefakte}
+    \textbf{Definition:} Zwischen und Endprodukte der Software.
+
+    \subsection{Konfigurationsmanagement}
+    \textbf{Definition:} die Gesamtheit der Verfahren, um die Konfiguration eines Software Systems zu identifizieren, zu verwalten, bei Bedarf bereitzustellen und ihre zu Änderungen überwachen und zu dokumentieren.
+    Dazu gehört auch die Möglichkeit, ältere Artefakte und Konfigurationen zu rekonstruieren.
+    Das Konfigurationsmanagement schließt also die Versions- und Variantenverwaltung ein. \subsection{Änderungsmanagement}
+    auch Issue Tracking. Änderungsforderungen werden verfolgt, die aus verschiedenen Quellen an ein Softwareprojekt gestellt werden.
+    z.B. Fehlerfeldungen von Anwender:innen oder auch Wünsche für Features/Funktionalität.
+    Wichtig, dass es einen festgelegten Prozess, wie umgegangen wird gibt.
+
+    \section{Git}
+    \subsection{Tags}
+    \textbf{Einfache Tags:} lightweight, ist wie ein Branch, der sich niemals ändert. Nur ein Zeiger auf einen bestimmten Commit.
+    \newline
+    \textbf{Kommentierte Tags:} vollwertige Objekt ein der Git Datenbank.Sie haben eine Checksumme, beinhalten Namen und E-Mail Adresse desjenigen, der den Tag
+    angelegt hat, das jeweilige Datum sowie eine Meldung.
+    \newline Sie können überdies mit GNU Privacy Guard (GPG)
+    signiert und verifiziert werden. Generell empfiehlt sich deshalb, kommentierte Tags anzulegen. Wenn man aber
+    aus irgendeinem Grund einen temporären Tag anlegen will, für den all diese zusätzlichen Informationen nicht
+    nötig sind, dann kann man auf einfache Tags zurückgreifen.
+    So ein kommentierter Tag stellt dann eine Konfiguration dar
+    \section{Verzweigungsmuster}
+    \subsection{Integration}
+    \begin{itemize}
+        \item \textbf{Mainline integration:} Alle gesunden Branches in die Mainline.
+        \newline \textbf{Vorteil:} man kann so einfach kontinuierliche Integration auf der Mainline machen.
+        \item \textbf{Feature Branch:} Features in einzelnen Branches gemacht und erst in Mainline gepusht wenn fertig.\newline  \textbf{Nachteil:} bei langlebigen Feature Branches ist  kontinuierliche Integration erschwert.
+        \item \textbf{Continous integration:} häufiges integrieren in die Mainline. \newline \textbf{Vorteil:} Merge conflicts werden risikoärmer und weniger Aufwand, aber
+        \newline \textbf{Nachteil:} dass man mehr Merge conflicts zu lösen hat durch CI.
+        \item \textbf{Peer reviewed commit:} bei jedem Commit  am besten.
+    \end{itemize}
+    \subsection{Auslieferung}
+    \begin{itemize}
+        \item \textbf{Release branch:} Erstellung einer separaten Release Branch in den keine neuen Features mehr kommen, sondern nur Commits zur Stabilisierung (zB Fehlerbehebung).  Man kann auch mehrere Release Branches parallel haben, falls Kund:innen noch alte Software Veionen am Laufen haben.
+        \textit{Nachteil:} kann relativ schwer sein, die Änderung im Release Branch an wieder in Mainline zu bekommen
+        \item \textbf{Maturity branch:} man erstellt mehrere Ebenen von Branches je nach Reife. zB Mainline, Release Branch, producition branch.
+    \end{itemize}
+
+    \chapter{Tests}
+    \subsection{Definition} die Ausführung eines Programms auf dem Rechner unter Bedingungen, für die das korrekte Ergebnis bekannt ist, so dass Ist und Soll Resultat verglichen werden können. Bei Nichtübereinstimmung liegt ein Fehler vor. \newline
+    Ist \textbf{gut}, wenn er hohe Chance hat, Fehler anzuzeigen.
+    \newline
+    \textbf{Zweck:} die Entdeckung von Fehlern.
+    Testen ist \textit{destruktiv}.
+    \subsection{Vorteile}
+    \begin{itemize}
+        \item natürliches Prüfverfahren
+        \item ist \textbf{reproduzierbar} und damit \textbf{objektiv}
+        \item einmal gut organisiert, lässt es sich \textbf{billig} wiederholen
+        \item Zielumgebung (Übersetzer, BS usw.) wird mitgeprüft.
+        \item Systemverhalten wird sichtbar gemacht.
+    \end{itemize}
+    \subsection{Nachteile}
+    \begin{itemize}
+        \item Aussagekraft des Tests wird \textbf{überschätzt}. zeigt nicht Korrektheit, denn schon die Zustandsräume kleiner Programme sind riesig.
+        \item man kann nicht alle Anwendungssituationen nachbilden.
+        \item zeigt nicht die \textbf{Fehlerursache}.
+    \end{itemize}
+    \subsection{Formen der Ausführung}
+    \textbf{Automatisierte Tests} werden häufig ausgeführt und bringen Sicherheit für Entwickler:innen und helfen Regressionsfehler zu finden. \newline
+    \textbf{Explorative Tests} manuelles Arbeiten, wo man kreativ neue Szenarien überlegt. Vor allem bei neuen Features wichtig.
+    \subsection{Treiber für Spezifikation von Tests (nach Glass (2009))}
+    \begin{enumerate}
+        \item durch \textbf{Anforderungen:} wir verwenden Anforderungsspezifikation um Testfälle abzuleiten. Ziel alle Anforderungen abzudecken. \textbf{Blackbox Tests}
+        \item durch \textbf{Struktur:} man verwendet die interne Struktur des Quelltexts mit dem Ziel verschiedener Aspekte dieser Struktur abzudecken \textbf{Whitebox tests}
+        \item durch \textbf{Statistik:} die Eingaben, die in Testfällen verwendet werden sind durch statische Methoden verwendet worden. Folgen beispielsweise einer statischen Verteilung oder sind zufällig.
+        \item durch \textbf{Risiko:} verschiedene Risiken, z.B. finanzielle Risiken von Fehlern oder hohe Verwendung bestimmter Funktionalität.
+    \end{enumerate}
+    \subsection{Test-Automatisierung}
+    \textbf{Vorteile}
+    \begin{itemize}
+        \item verbesserte Produktqualität
+        \item hohe Überdeckung
+        \item verkürzte Testzeit
+        \item Zuverlässigkeit
+        \item erhöhtes Vertrauen
+        \item Wiederverwendbarkeit der Tests
+        \item weniger menschlicher Aufwand
+        \item Kosteneinsparung
+        \item erhöhte Fehlerfindungsrate
+    \end{itemize}
+    \textbf{Nachteile:}
+    \begin{itemize}
+        \item kann manuelles Testen nicht ersetzen
+        \item Wartung von automatisierten Testfällen
+        \item Einführung des Prozesses braucht Zeit
+        \item fehlende Mitarbeiter mit entsprechenden Fähigkeiten
+    \end{itemize}
+    \subsection{Äquivalenzklassen}
+    Menge der Zustände in denen das Programm gleich auf den Sachverhalt reagiert.
+    Aus jeder Klasse muss mindestens ein Wert getestet werden.
+    Werden intuitiv identifiziert (heuristisch).
+    \newline Lieber eine Klasse deswegen zu viel als zu wenig.
+    \newline
+    \textbf{Grenzwerte} sollten speziell berücksichtigt werden.
+    \subsection{Glassbox Tests}
+    Da liegt der Ablaufparagraph also dein Flussdiagramm zu Grunde.
+    Arten von Überdeckungen:
+    \begin{itemize}
+        \item \textbf{Befehlsüberdeckung:} Alle Befehle müssen ausgeführt werden.
+        \item \textbf{Zweigüberdeckung:} alle Verzweigungen werden abgedeckt.
+        \item \textbf{Termüberdeckung:} alle möglichen Ursachen für Verzweigungen müssen wirksam geworden sein.
+        \item \textbf{Pfadüberdeckung:} alle Pfade müssen durchlaufen worden sein.
+    \end{itemize}
+    \textbf{Werkzeuge:} Der Glass-Box-Test setzt \textbf{Test-Werkzeuge} voraus, die instrumentieren die Quellprogramme (d.h. sie fügen zusätzliche
+    Anweisungen ein), so dass während der Ausführung statistische Daten gesammelt werden.
+    \newline
+    Außerdem kumulieren die Werkzeuge diese Daten, so dass eine \textbf{Aussage} entsteht, wie oft ein bestimmter Befehl, Zweig
+    o.ä. insgesamt, also in allen Testläufen, durchlaufen wurde. Schließlich präsentiert das Werkzeug die
+    Resultate in leicht lesbarer Form, z.B. durch unterschiedlich eingefärbten Quellcode, der unmittelbar die noch
+    nicht erreichten Teile erkennen lässt.
+    \section{Teststufen}
+    \subsection{Unit- Modultest}
+    \textbf{Einzelne} Einheiten (Klassen, Module) werden separat/isoliert getestet. \newline Wechselwirkungen mit anderen Units sind \textbf{nicht} von Interesse.
+    \subsection{Testcase per feature:}
+    Falls die Zahl der Methoden in der Testklasse zu stark ansteigt: \textbf{separate Testfälle} pro Feature.
+    \newline Dabei aber Schwierigkeit, sinnvolle Features zu identifizieren.
+    \newline \textbf{Andere Alternativen:} Testcase class per fixture, weil dies Code Duplikate vermeidet
+    \subsection{Four phase test}
+    Bei automatisierten Tests kann man über vier Teile unterscheiden:
+    \begin{itemize}
+        \item \textbf{Vorbereitungsteil/Setup:} baut Umgebung und die Daten für den Testfall auf
+        \item \textbf{Fixture:} verbindet SUT mit anderen davon abhängigen Klassen und ersetzt diese evtl. auch durch Dummies.
+        \item \textbf{Ausführungsteil/Exercise:} ruft die zu testenden Funktionen im SUT auf
+        \item \textbf{Verifikationsteil/Verify:} führt den Vergleich zwischen Resultat und zu erwartendem Resultat aus.
+        \item \textbf{Teardown/Abschlussteil:} räumt die aufgebauten Ressourcen wieder auf.
+    \end{itemize}
+    \subsection{Assertion messages}
+    Zusicherungen, um unsere Testlogik zu strukturieren.
+    \subsection{State verification}
+    Wenn SUT keinen Wert zurückliefert muss man Zustandsänderung z.B. über Abprüfen einzelner Attribute testen.
+    \subsection{Behaviour verification}
+    Es zeigt sich ein sichtbares Verhalten, was man mit dem zu erwarteten Verhalten vergleichen kann. z.B. durch Protokollierungen von Veränderungen
+    \subsection{Test double}
+    \textbf{Schwierigkeit bei Unit Tests:} SUT hängt von anderen Klassen/Komponenten ab -> test double ersetzt die Klassen, API sollte übereinstimmen, aber nicht ganze Funktionalität sollte repliziert werden. Soll Test \textbf{isolieren}.
+    Dazu gehören:
+    \begin{itemize}
+        \item \textbf{Dummy object:} Manchmal werden Werte im Test benötigt, damit SUT etwas aufrufen kann. Kann Test kompakter machen anstatt jedes einzelne Attribut separat innerhalb des Testfalls zu setzen.
+        \item \textbf{Fake object:} eng mit mock objekt verwandt, Fokus hier auf sehr leichtgewichtiger Implementierung. Ersetzt den Zugriff auf ein anderes Objekt, auf die nicht zugegriffen werden sollte. Man versucht unerwünschte Seiteneffekte zu vermeiden. z.B. fake Databases sind beliebt.
+        \item \textbf{Test spy:} Gegenstück zum Test stub: fängt die Ausgabe des SUT an andere Komponenten ab und gibt sie dem Testfall zur Verifikation über.
+        \item \textbf{Mock object:} Objekt, dass sich auf SUT verlässt wird mit testspezifischem Objekt ersetzt um zu verifizieren, dass es vom SUT korrekt verwendet wird. Ist insbesondere bei \textbf{state verification} wichtig.
+        \item \textbf{Test stub:} liefert bestimmte Werte an das SUT. Kann immer gleicher Wert (\textbf{hard coded test stub}) oder ein konfigurierbarer Wert sein. Aber besonders wichtig, dass der Test stub installierbar ist.
+    \end{itemize}
+    \subsection{Akzeptanztests}
+    \subsection{Akzeptanztests getriebene Entwicklung}
+    Akzeptanztests auf Systemebene als Grundlage für ganze weitere Entwicklungsaktivitäten. Aus Anforderungen meisten Use case Diagramme werden dann auch Akzeptanzkriterien abgeleitet.
+    \subsection{Systemtests}
+    \textbf{Definition:} Test auf \textbf{kompletten, integrierten} System.
+    \newline
+    \newline
+    \textbf{Lasttests:} testen gesamte Prozessketten auf \textbf{Performanz}, d.h. die Verknüpfung der Einzelprozesse. D.h. konkrete Prozesse Vorgänge aus der Nutzung werden \textbf{simuliert}. \newline
+    \newline Skalierbarkeit ist von entscheidender Bedeutung. Häufige Fehlerwirkung sind
+    \textbf{Deadlocks} beim Datenbankzugriff, die sonst nur schwer testbar sind.
+    \newline Wird das System \textbf{bewusst über die definierte Lastgrenze hinaus} beansprucht, spricht man vom \textbf{Stresstest.}
+    \newline
+    \newline
+    Dabei sollte die Last (Anzahl der virtuellen Nutzer:innen) \textbf{schrittweise} bis über die definierte Lastgrenze hinaus erhöht werden. \newline
+    \newline
+    \textbf{Performanztests:} wiederholen ausgewählte Testfälle bzw. Einzelprozesse aus dem Systemtest unter einer \textbf{Grundlast:} einzelne Funktionen auf ihre Performanzeigenschaften geprüft zum Testen der Skalierbarkeit einzelner Funktion.
+    \subsection{{Usability Test:}}
+    Test mit Nutzer:innen zur Benutzbarkeit. Konzentration auf dem \textbf{Qualitätsattribut} Benutzbarkeit, denn viele Aspekte lassen sich erst sinnvoll auf Systemebene prüfen.
+    \newline Es gibt systematische Evaluierungen mit potenziellen echten Nutzer:innen. Messmethoden z.B. Videos, eye tracking wodurch dann \textbf{Rückschlüsse auf Benutzbarkeit} gezogen werden.
+    \subsection{{Sicherheitstest}}
+    Zur Informationssicherheit, sollten nicht erst auf Systemebene ansetzen, auch bereits auf kleinerer Ebene testbar, aber sinnvoll nochmal auf Systemebene nach Lücken zu suchen.
+    Hat die Funktion des Nachweises, dass eine Software keine Funktion enthält, die sie nicht enthalten soll meistens Negativtests. Sollen Beweis erbringen, dass keine unsicheren Nebeneffekte vorhanden sind. \newline
+    \textbf{Üblicher Ansatz: Penetrationstests} (White Hat Hacker)
+    \subsection{Testcase Class per Test:}
+    Einfach für jede Klasse eine \textbf{eigene} Testklasse um am einfachsten die jeweiligen Testmethoden die zur zugehörigen Testklasse zuzuordnen.
+    \subsection{Integrationstest}
+    \subsection{Definition:} Es geht nicht um Fehler einzelner Komponenten, sondern um
+    \textbf{Konsistenzprobleme} zwischen den Komponenten. z.B. Schnittstellenfehler zwischen den Modulen.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{dnfja.png}
+        \caption{Test automation pyramid}
+        \label{fig:enter-label}
+    \end{figure}
+    \section{Muster}
+    \subsection{Common Includes}
+    Das Zusammennehmen von Gemeinsamkeiten die dann so in den Test eingebunden werden um unnötige Mehrarbeit zu sparen, wenn sie in der ähnlichen Umgebung aufgebaut wurden.
+    \subsection{Parameterized includes}
+    In Tests werden \textbf{Parameter} integriert, die mit separat spezifizierten Werten belegt werden können, wenn sie bis auf die Parameter gleich sind (basically \textbf{überschreiben})
+    \subsection{Antimuster: Creating scenarios by domain experts or developers in isolation}
+    Wenn Tests nicht gemeinsam besprochen, \textbf{kein gemeinsames Verständnis} der Anforderungen der Software, fehlt die \textbf{technische Expertise} und die Tests sind \textbf{schwer zu automatisieren.}
+    \newline Wenn Entwickler alleine an
+    Szenarien arbeiten, dann entsprechen sie \textbf{nicht} den eigentlichen
+    Nutzerbedürfnissen.
+    \textbf{Antimuster:} Creating Scenarios by
+    Domain Experts or Developers in Isolation
+    \subsection{\textbf{Schwächen von test coverage}}
+    \begin{itemize}
+        \item keine Aussage über Qualität und Sinnhaftigkeit
+        \item kein Testen der Edge cases evtl
+        \item ignoriert nicht ausgeführten Code
+        \item falsches Sicherheitsgefühl
+        \item imagine dein Test ist buggy und du hast dann ein buggy Programm, das nt auffällt
+    \end{itemize}
+    \chapter{Integration}
+    \subsection{Definition:} Prozess der Kombination aller Software- und Hardware-Komponenten in ein eingebettetes System.
+    \subsection{Teilintegriertes System}
+    Solange System noch \textbf{nicht vollständig integriert} ist, wird das Ergebnis jedes Integrationsschrittes als Teilintegriertes System bezeichnet.
+
+    \subsection{Probleme der Integration}
+    \begin{itemize}
+        \item \textbf{inkompatible} Schnittstellen (syntaktische oder semantische Konflikte z.B. durch Fehlen von Spezifikationen
+    \end{itemize}
+    \subsection{Big Bang Integration}
+    einfach alles in einem Modul testen und reinschmeißen.
+    \newline
+    \textbf{Vorteile:}
+    \begin{itemize}
+        \item \textbf{keine} Test doubles sind notwendig (weil man ja alles zusammen reinschmeißt)
+        \item \textbf{keine} Testtreiber und Platzhalter
+        \item sofort \textbf{vollständiges} System
+    \end{itemize}
+    \textbf{Nachteile:}
+    \begin{itemize}
+        \item System wahrscheinlich \textbf{nicht lauffähig}.
+        \item Fehler nur auf \textbf{Systemebene}.
+        \item in Praxis kaum möglich, da Komponenten zu viele Fehler und \textbf{Inkonsistenzen} enthalten: \newline System ist \textbf{nicht ausführbar}, Probleme lassen sich nur einem \textbf{großen ganzen System} zuordnen.
+        \clearpage
+    \end{itemize}
+    \subsection{Bauen}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\linewidth]{bauen.png}
+        \caption{Bauen der Software}
+
+        \label{fig:enter-label}
+    \end{figure}
+    \textbf{Automatisierung durch Build scripts:} bauen wegen Komplexität der \textbf{Zusammenhänge} und \textbf{Sicherstellung} der Wiederholbarkeit notwendiger Schritte immer automatisiert.
+
+    \subsection{Continuous Integration CI}
+    \subsection{Definition}
+    Ist eine laufende Integration auf dem Integrationsrechner der von der Entwicklungsumgebung getrennt ist. Integration als fortlaufender Prozess. Sobald neue Komponente fertig ist wird sie integriert und getestet.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\linewidth]{ci.png}
+        \caption{CI}
+        \label{fig:enter-label}
+    \end{figure}
+    \clearpage
+    \subsection{CI Pipeline}
+    Man teilt Pipeline in \textbf{Stages}. Regel hinter Reihenfolge: "fail fast", also wenn schief geht, \textbf{möglichst schnell}, da schnelle Rückmeldung und schnelle Behebung.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{pipeline.png}
+        \caption{CI Pipeline}
+        \label{fig:enter-label}
+
+    \end{figure}
+    \subsection{CI config}
+    Beschreibt, \textbf{was} zu tun ist. Z.B. Betriebssystem auf dem build, tests ausgeführt werden, Datenbanken und dazugehörige Passwörter.
+    \newline Kennt die Ablaufumgebung, ruft entsprechende Teile des Build Scripts auf und unter Versionskontrolle.
+    \subsection{Build Script}
+    Kennt hingegen, wie das Quellcode repo und quellcode aufgebaut ist. Es weiß, was übersetzt werden muss. Es weiß, wo Tests sind die ausgeführt werden müssen. \newline Wenn ich also meine Tests in
+    Unterverzeichnisse für Unit-Tests und Integrationstests aufteile, dann muss sich das \textbf{Build Script ändern}. \newline Die CI
+    Config sollte davon aber \textbf{nicht betroffen} sein
+    \subsection{Risiken, die durch CI reduziert werden}
+    \begin{itemize}
+        \item \textbf{Keine ausliefbare Software:} manuelles Anstoßen, Datenbank Synchronisation
+        \item \textbf{Späte Fehlerentdeckung:} Regressionstest, Testüberdeckung
+        \item \textbf{Fehlende Sicht auf Projektstatus}
+        \item \textbf{Niedrige Softwarequalität}
+    \end{itemize}
+
+    \section{Deployment}
+    \subsection{Definition}
+    Phase im Projekt wo das System \textbf{into operation} gebracht wird und von \textbf{alten} zu \textbf{neuen} Systemversionen aktualisiert werden Fehler resolved werden (Cutovers).
+    \subsection{Release}
+    \textbf{Definition:} \textbf{bestimmte Versionen einer Konfiguration} die zu einem bestimmten Grund gemacht wurden \textit{oder} eine \textbf{Ansammlung} an neuen oder veränderten Konfigurationen, welche getestet wurden und live in die neue Umgebung zusammen gelassen werden.
+    \subsection{Häufige Releases}
+    Sehr viele \textbf{kleine} Releases um \textbf{Fehleranfälligkeit zu vermeiden} und dann nicht auf einmal das ganze System am Arsch ist. Risiko bleibt klein, \textbf{aber} Release sollte um das möglich zu machen weitgehend automatisiert sein.
+
+    \section{Continuous Delivery CD}
+    Erweitert CI indem es fordert, dass \textbf{jede Änderung gebaut und getestet,} sondern auch in einer Staging Umgebung durchgeführt werden.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width= 0.5\linewidth]{cd.png}
+        \caption{CD}
+        \label{fig:enter-label}
+    \end{figure}
+    \subsection{Nutzen von CD}
+    \begin{itemize}
+        \item bei jeder Änderung \textbf{schnelles, automatisiertes Feedback} zur Produktionsreife der Software.
+        \item Releases hängen nur noch von \textbf{Geschäftsanforderungen} ab, nicht von Einschränkungen aus Entwicklung oder Betrieb.
+        \item für Änderungen am Code bekommt man in jeden Fall eine \textbf{Rückmeldung}, ob die Software in \textbf{Produktionsumgebung} gehen kann.
+    \end{itemize}
+
+    \subsection{Continuous Deployment}
+    Fügt CD das direkte, automatische Deployment in die \textbf{Produktionsumgebung} hinzu. \newline
+    Extrem schnelle Rückmeldung zu Änderung und Admit Möglichkeit zu experimentieren.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\linewidth]{dsghah.png}
+        \caption{ausgereifte Deployment Pipeline mit großen Stufen}
+        \label{fig:enter-label}
+        UAT= User Acceptance Test
+    \end{figure}
+    \clearpage
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\linewidth]{wdeshaLN.png}
+        \caption{Automotive Deployment Pipeline}
+        \label{fig:enter-label}
+        ECU= Electronic Control Unit / Steuergerät
+    \end{figure}
+    \subsection{Continuous Deployment patterns}
+    \subsection{Blue-Green Deployment}
+    Einfach, dass man immer \textbf{zwei lauffähige Systeme} bereithält (eins mit bisherigen Version und anderes mit der neu deployten Version), zwischen man immer \textbf{schnell umschalten} kann, damit Umschalten beim Deployment vom Cutover schnell gehen kann.
+    \subsection{Canary Releasing}
+    \textbf{Nicht alle} Nutzer:innen werden sofort auf die neue Version umgestellt, damit bei Fehlern in der Version nicht direkt alle Nutzer:innen von den Auswirkungen betroffen sind. \newline
+    Der Anteil wird dann \textbf{beobachtet} und sobald man sich \textbf{sicher genug} ist, dass keine Probleme auftreten, lässt wird die neue Version auf alle Nutzer:innen ausgerollt.
+    \subsection{Dark launching}
+    Neuen Features für Nutzer:innen werden \textbf{unsichtbar deployt}. Echte Nutzer*innen-Interaktionen werden
+    zusätzlich zur alten Version auch an das \textbf{Feature im Backend weitergegeben}
+    und das Verhalten analysiert. \newline Erst wenn das neue Feature sich auch mit den
+    \textbf{echten Interaktionen verhält wie erwartet}, schalten wir auf das neue Feature
+    um.
+
+    \subsection{A/B Testing}
+    Ein \textbf{Teil} der Nutzer:innen wird zur einen Variante geleitet, der andere Teil zur anderen. Anhand passender Messungen wird dann verglichen, welche Variante besser ist.
+    \subsection{Feature Toggles}
+    Ins System einbauen, einzelne Features \textbf{ein und auszuschalten}, damit unfertige Features im Deployment deaktiviert werden können. Weil Mainline Features enthalten kann, die unfertig sind.
+
+
+    \chapter{Qualität}
+    \subsection{Gravins Qualitätsansätze}
+    \begin{enumerate}
+        \item \textbf{User based value:}
+        nutzerbasierter Blickwinkel um mit den Nutzern zu diskutieren.
+        \item \textbf{Product based:} zu messbaren Produkteigenschaften transferiert.
+        \item \textbf{Manufacturing based}
+        Eigentliche Software im Entwicklungsprozess
+    \end{enumerate}
+    \textbf{Schlussfolgerung:} Zu unterschiedlichen Zeitpunkten braucht man \textbf{unterschiedliche Blickwinkel} in der Entwicklung.
+    \subsection{Stakeholders}
+    Ein Stakeholder ist
+    jeder, der ein \textbf{berechtigtes Interesse} an dem System hat. Übliche Stakeholder sind die Endanwender*innen, die
+    Kund*innen, die Entwickler*innen und die Betreiber*innen. \newline Alle haben eigene, manchmal sogar sich
+    widersprechende Bedürfnisse und Ziele. \newline Ob und wie diese Ziele erfüllt werden hängt wiederum eng mit der
+    Qualität zusammen.
+    \textbf{Qualität hängt vom Stakeholder ab.}
+    \subsection{Qualitätenbaum}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\linewidth]{dje.png}
+        \caption{Baum}
+        \label{fig:enter-label}
+        rot:Produktqualitäten
+    \end{figure}
+    \subsection{Qualitätsmodell nach Avizienies}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{ujsbFNK.png}
+        \caption{Qualitätsmodell nach Avizienies}
+        \label{fig:enter-label}
+    \end{figure}
+    \subsection{ISO 25010}
+    \textbf{Quality in use}
+    \begin{itemize}
+        \item \textbf{efficiency}
+        \item \textbf{effectiveness}
+        \item \textbf{context coverage:} context completeness flexibility
+        \item \textbf{freedom from risk:} economic high risk mitigation, safety and health risk, environmental risks
+        \item \textbf{Satisfaction:} usefulness, trust, comfort
+
+    \end{itemize}
+    \textbf{Product Quality}
+    \begin{itemize}
+        \item \textbf{Functional suitability:}
+        completeness, correctness, appropriation
+        \item \textbf{performance efficiency:} time behaviour, capacity, resource util.
+        \item \textbf{Compatibility:} co-existence, interoperability
+        \item \textbf{Usability:} Appropriateness
+        recognizability,
+        Operability,
+        User error
+        protection,
+        User interface
+        aesthetics, Accessibility
+        \item \textbf{Portability:} adaptability, installability, replaceability.
+        \item \textbf{Security:} confidentiality integrity, accountability, authenticity.
+        \item \textbf{Maintainability:} modularity, reusability, analysability, testability, modifiability.
+        \item \textbf{Reliability:} maturity availability, fault tolerance, recoverability
+    \end{itemize}
+    \subsection{Zuverlässigkeit}
+    Die Wahrscheinlichkeit einer fehlerfreien Arbeitsweise einer Software für eine bestimmte
+    Zeitdauer in einer bestimmten Umgebung. \newline Es beschreibt die \textbf{Häufigkeit des Auftretens} von Fehlern und wird
+    oft mit Qualität gleichgesetzt.
+    \subsection{Fehlerterminologie}
+    \begin{itemize}
+        \item \textbf{Mistake:} Fehlerbehandlung
+        \item \textbf{Fault:} Fehlerursache
+        \item \textbf{Error:} Fehlerzustand
+        \item \textbf{Failure:} Ausfall
+    \end{itemize}
+    \section{Test-driven Development}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.75\linewidth]{dfds.png}
+        \caption{ATDD und TDD}
+        \label{fig:enter-label}
+    \end{figure}
+    Die drei Gesetze des TDD:
+    \begin{enumerate}
+        \item Du darfst keinen Produktionscode schreiben bevor du
+        einen fehlgeschlagenen Unit-Test hast.
+        \item Du darfst nicht mehr von einem Unit-Test schreiben als
+        notwendig ist, um fehlzuschlagen; nicht zu kompilieren
+        ist fehlschlagen.
+        \item Du darfst nicht mehr Produktionscode schreiben, als
+        notwendig ist, um den derzeit fehlschlagenden Test zu
+        bestehen.
+    \end{enumerate}
+    \chapter{Code verstehen(wtf)}
+    \section{Inhärente/zufällige Komplexität}
+    \textbf{Inhärent:}Weil Domain schwierig/ komplex: Code komplex.
+    \textbf{Zufällige:} schlechter Code
+    \subsection{Mentales Modell}
+    \begin{itemize}
+        \item \textbf{Wissen über Textstruktur: }Kontrollstrukturen, Variablendefinitionen, Aufrufhierarchien, Parameterdefinitionen
+        \item \textbf{Chunks:} Verschiedene Ebenen der \textbf{Abstraktion} von Textstrukturen
+        \item \textbf{Pläne:} Wissenselemente, um \textbf{Erwartungen und Interpretationen} zu entwickeln und validieren, wie z.B.
+        Sortieralgorithmen oder Domänenwissen
+        \item \textbf{Hypothesen:} Annahmen über das Programm, die beim Verstehen entstehen (warum, wie und was?)
+        \item \textbf{Chunking: } Das Erschaffen \textbf{neuer, abstrakterer} Chunks
+        \item \textbf{Cross-Referencing:} \textbf{Teilen} des Programms \textbf{funktionale Beschreibungen }zuzuweisen
+        \item \textbf{Beacons: } Marken im Programm, die vorhandenes Wissen bei Leser*innen aufruft, z.B. Programmiererfahrung,
+        dass Swap-Funktion oft in Sortierfunktionen benutzt wird.
+        \item \textbf{Rules of Discourse:} Regeln zu \textbf{Programmierkonventionen und -standards}
+    \end{itemize}
+    \subsection{\textbf{McCabes zyklomatische Komplexität}}
+    Formel: E -V + 2p ( p verbidende Komponenten)
+    \textbf{Schwächen: } beschränkte Aussagekraft, keine Aussage über Lesbarkeit, Abhängigkeit von Darstellung.
+    \subsection{Gewünschte Eigenschaften von Bezeichnern}
+    \textbf{Konsistenz: } Eindeutiger Name für ein Konzept \newline
+    \textbf{Prägnanz: } Korrektur direkter Namen des Konzepts
+    \subsection{Programmierrichtlinien}
+    Häufig sind unterschiedliche Lösungen möglich.
+    Programmierrichtlinien sind eine Festlegung (teilweise nicht objektiv begründbar), um Einheitlichkeit zu
+    erreichen. Darüber hinaus werden dadurch gewonnene Erfahrungen festgehalten in der Hoffnung Probleme
+    nicht mehrfach zu erzeugen. Um Qualität im Code zu versichern, sind folgende Richtlinien möglich:
+    \begin{itemize}
+        \item Strukturierte Programmierung:
+        \item Gültigkeitsbereich von Variablen: Welche Programmteile sind
+        von Änderungen der Variable betroffen?
+        \item Use Intention-Revealing Names: sinnvolle Bezeichner
+        \item Länge und Schachtelung: Aufteilen in mehrere Methoden
+        \item Don’t Repeat Yourself (DRY) aka avoiding clones
+        \item Don’t comment bad code – rewrite it.
+    \end{itemize}
+    \subsection{Refactoring}
+    ändern des Code ohne das Verhalten zu ändern $\rightarrow $ genannte Probleme
+    lösen\\[1em]
+    \textbf{Mögliche Dinge:}
+    \begin{itemize}
+        \item Verbesserung von Variablen- oder Methodennamen
+        \item Anwendung eines konsistenten Styleguide
+        \item Verbesserung der Package-Struktur (Stichwort Coupling and Cohesion)
+        \item Verbesserung der Code-Kommentare
+        \item Verbesserung der Dokumentation (README)
+        \item Verbesserung der Fehler Behandlung
+        \item Verbesseruf der Usability/ User experience
+        \item Behebung von durch Tools identifizierter Code Smells oder Bug Patterns
+        \item Extract Method oder andere refactorings( extract Interface, pull up method)
+        \item Einsatz von Patterns wie zb Mediator zur Verbesserung des Designs
+        \item Anwendung von SOLID Prinzipien
+    \end{itemize}
+    \textbf{Extract Method} (Gegenstück: Inline Method): Teil einer Methode wird in eine eigene Methode ausgelagert\\[1em]
+    \textbf{Pull-Up Method} (Gegenstück: Push-Down Method): Methode wird von Sub-Klasse in die Basis-Klasse verschoben
+
+    \section{Qualitätssicherung/ Quality assurance}
+    \textit{Alles, was zu tun ist, damit man der Qualität eines
+    Produkts \textbf{trauen kann, gehört dazu}.}
+    \newline
+    Nachweisen von, \textit{ob} es gut ist und \textit{wie} man es besser machen kann.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width= 0.7\linewidth]{SFD.png}
+        \caption{Qualitätssicherung}
+        \label{fig:enter-label}
+    \end{figure}
+
+    \subsection{Validierung/ Verifikation}
+    \textbf{Validierung: } richtges System für die Nutzer:innen ? \newline
+    \textbf{Verifikation:} System richtig entwickelt?
+
+    \subsection{Reviews}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\linewidth]{dSFEWDCS.png}
+        \caption{Manuelle Prüfung}
+        \label{fig:enter-label}
+    \end{figure}
+
+    \subsection{Rollen}
+    \textbf{Moderator:in:}leitet das Review.
+    \newline
+    \textbf{Notar:in:} führt das Protokoll. \newline
+    \textbf{Autor:in:} Urheber:in des Prüflings \newline
+    \textbf{Gutachter:in:} Kolleg:innen, die Prüfling begutachten. \newline
+    \textbf{Manager:in:} hat Auftrag zur Erstellung des Prüflings gegeben. Sollte vor allem in den \textbf{ersten paar Reviews} einfach nicht anwesend sein lol. \newline
+    \textbf{Reviewteam:} alle außer Autor:in
+
+    \subsection{Fragenkatalog}
+    Aspekt "Form":
+    Ist die Darstellung im Dokument\textbf{ sinnvoll?}  \newline
+    1. Sind \textbf{alle Anforderungen erkennbar}, d. h. von Erklärungen unterscheidbar?  \newline
+    2. Sind alle Anforderungen \textbf{eindeutig referenzierbar}? \newline
+    3. Ist die Spezifikation jeder \textbf{Anforderung eindeutig}? \newline
+    4. Sind alle Anforderungen \textbf{überprüfbar formuliert}? \newline
+    Aspekt "Benutzerschnittstellen":
+    Sind alle Schnittstellen \textbf{eindeutig spezifiziert}? \newline
+    5. Sind alle Benutzerklassen des Systems (Dauerbenutzer, gelegentliche
+    Benutzer, System-Administrator etc.) \textbf{identifiziert}? \newline
+    6. Ist die \textbf{Bedienschnittstelle} für jede der Benutzerklassen festgelegt? \newline
+    7. Ist die \textbf{Bedienphilosophie einheitlich}? \newline
+    8. Ist das beschriebene Bedienkonzept den \textbf{Vorkenntnissen der Benutzer
+    angemessen}?
+
+    \chapter{Projektmanagement}
+    \subsection{Ziel}
+    Das Projekt erfolgreich durchzuführen und abzuschließen. Erfolgreich bedeutet:
+    Das Projekt erzielt die definierten Resultate in der geforderten
+    Qualität innerhalb der vorgegebenen Zeit und mit den
+    vorgesehenen Mitteln.
+    Weitere sekundäre Ziele sind in der Regel
+    \begin{itemize}
+        \item  Aufbau oder Verstärkung eines guten Rufs auf dem Markt,
+        \item Aneignung von Kenntnissen, die zukünftig benötigt werden,
+        \item Entwicklung wiederverwendbarer Komponenten,
+        \item Wahrung eines attraktiven Arbeitsklimas für die Mitarbeiter
+    \end{itemize}
+    \subsection{Kickoffs}
+    Müssen drei große Bereiche abdecken: \newline \textbf{Purpose/}Zweck (Vision, Mission),\newline  \textbf{Alignment/} Ausrichtung(values, principles, core team, working agreements) und  \newline \textbf{Context} (Boundaries, committed resoruces, project community interaction, perspecive analysis).
+    \subsection{Managementaufgaben}
+    \begin{itemize}
+        \item \textbf{Erstellung der Aufgaben:} Das Angebot ist der eigentliche Startschuss des Projekts. Es legt
+        grundsätzlichen Dinge des Projekts fest und hat damit bereits starken Einfluss auf den Projekterfolg. \newline
+        \textbf{Projekt- Zeitplanung: }\newline Ohne Pläne kann ein Projekt nicht geführt werden; Planungsfehler lassen sich
+        später nicht kompensieren.
+        \item \textbf{Projektkostenkalkulation: }Die Basis für das Projekts und für die weitere Kontrolle über das Projekts ist
+        initial eine Schätzung der Kosten, später die Überwachung.
+        \item \textbf{Projektüberwachung und Reviews: } Arbeitsergebnisse und der Projektfortschritt müssen bewertet werden,
+        es muss überwacht werden, ob sich die Beteiligten an Vereinbarungen halten.
+        \item \textbf{ Auswahl, Beurteilung und Führung des Personals: }Führen heißt: vorangehen, den Weg zeigen, auch die
+        Gruppe mitziehen. Die meisten Entwickler wollen gute Leistungen erbringen, brauchen aber auch
+        Orientierung und Bestätigung.
+        \item \textbf{Präsentation und Erstellen von Berichten: } Der Projektleiter steht zwischen Management, Kunden oder
+        dem Marketing und Mitarbeitern. Für das Management repräsentiert er das Projekt, für den Kunden die
+        Herstellerfirma, für das Marketing die Technik, für die Mitarbeiter die Leitung der Firma. Nur wenn er auf allen
+        Seiten zuhört und nach allen Seiten Informationen weitergibt, hat er eine Chance.
+        \item \textbf{Sicherstellung günstiger Rahmenbedingungen: }Ein Projekt gedeiht am besten, wenn die Mitarbeiter,
+        ausgestattet mit der notwendigen Infrastruktur, konzentriert und ungestört stabile Ziele verfolgen können.
+        Aber um das Projekt herum gibt es viele Anfechtungen (wankelmütige Kunden, unklare Zielsetzungen,
+        Restrukturierungen, Sparmaßnahmen, enge Büros, lange Wege etc.). \newline Es ist Aufgabe des Projektleiters, das
+        Projekt vor diesen störenden Einflüssen zu schützen.
+    \end{itemize}
+    \subsection{Planung}
+    \subsection{Planungsaspekte}
+    \textbf{Planung der Aufgaben:} Arbeitspakete werden festgelegt. \newline
+    \textbf{Planung der Termine:} Deadlines werden festegelegt + Endtermin \newline
+    \textbf{Planung der Resourcen:}Aufwandeinschätzung, Kosten und Budgetermittlung.
+
+    \subsection{Arbeitspakete}
+    Man zerteilt die Entwicklungsaufgaben so lange in Pakete bis es nicht mehr geht. \newline
+    \textbf{Arbeitspaket:} eine Aufgabe, die Entwickler:innen oder kleines Team in max. einem Monat mit gut planbarem Aufwand lösen kann.
+
+    \subsection{Kriterien für Arbeitspakete}
+    \begin{itemize}
+        \item kann durchgängig erledigt werden, ohne dass es Koordinationszwänge gibt
+        \item Fortschritt und das Ende sind objektiv feststellbar(messbar)
+        \item der Aufwand und Termine sind einschätzbar.
+
+    \end{itemize}
+    \subsection{Interne und externe Meilensteine}
+    \begin{itemize}
+        \item \textbf{externe Meilensteine:} definieren Ergebnisse, die aus Sicht des Auftraggebers wichtig sind. Auftraggeber entscheidet nach Bewertung der erzielten Ergebnisse, ob Arbeitspakete der nächsten Phase gestartet werden dürfen.
+        \item \textbf{interne Meilensteine:} sinnvoll, wenn Zeitraum zwischen zwei Meilensteinen so groß ist, dass man Zwischenkontrollpunkte braucht. Sind da, um den Fortschritt des Projekts sichtbar zu machen.
+    \end{itemize}
+    \clearpage
+    \section{Vorgehensmodelle}
+    \subsection{Wasserfallmodell}
+    Sind erfolgreich, weil im Laufe der Entwicklung Änderungen und Korrekturen notwendig werden.
+    \textit{Probleme:}
+    \begin{itemize}
+        \item Einbahnstraßenmodell
+        \item unvermeindliche Rücksprünge
+    \end{itemize}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{ekf.F.png}
+        \label{fig:enter-label}
+    \end{figure}
+
+    \subsection{Prototyping}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\linewidth]{jhasLFMD.png}
+
+        \label{fig:enter-label}
+    \end{figure}
+    Nach Floyd:
+    \begin{itemize}
+        \item \textbf{Exploratives Prototyping:} Ziel: Analyse und ergänzen (funktionale Protypen)
+        \item \textbf{Experimentelles Prototyping} Ziel: technisch Umsetzung eines Entwicklungsziels ( funktionale Prototypen, Labormuster)
+        \item \textbf{ Evolutionäres Prototyping:} eigentlich kein Prototyping, sondern spezielles Verständnis des Entwicklungsprozesses.
+    \end{itemize}
+    \subsection{Iterative Entwicklung}
+    Ein großes Projekt wird in kleinere Folgen/Iterationsschritte gegliedert. Das Endprodukt ist dann aus allen erfahrungen von den ersten Durchgängen.In jeder Iteration werden die Tätigkeiten Analysieren, Entwerfen, Codieren und Testen ausgeführt, und das
+    resultierende System wird erprobt.
+
+    \subsection{Inkrementelle Entwicklung}
+    Das zu entwickelnde System wird nicht in einem Zug konstruiert, sondern in einer Reihe von aufeinander
+    aufbauenden Ausbaustufen.
+    Jede Ausbaustufe wird in einem eigenen Projekt erstellt, in der Regel auch ausgeliefert und eingesetzt.
+    Zu Beginn einer inkrementellen Entwicklung muss sichergestellt sein, dass in der ersten Ausbaustufe, dem
+    Kernsystem, ein zentraler, funktional nutzbringend einsetzbarer Ausschnitt des gesamten Systems realisiert ist.
+    Nachdem das Kernsystem realisiert ist, kann das System im Anwendungsbereich eingesetzt werden.Das zu entwickelnde System bleibt in seinem \textbf{Gesamtumfang offen}; es wird in Ausbaustufen realisiert. Die
+    erste Stufe ist das Kernsystem.Das System wird schrittweise realisiert, wobei es typisch keinen definierten Endzustand gibt.
+    \textbf{Vorteile:} frühe Rückkopplung der Erfahrung und kurze Entwicklungszeiten für Inkrements.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.75\linewidth]{gojrlöajfdp.png}
+        \label{fig:enter-label}
+        \\Fundamental für Spiralenmodell ist das \textit{Risiko}. Diese sollten schnell und früh gefunden und bekämpft werden.
+    \end{figure}
+    \subsection{Scrum}
+    \subsection{Scrum Charakteristika}
+    \begin{itemize}
+        \item \textbf{selbst organisiert}e Teams
+        \item Produkt schreitet in \textbf{Sprints} fort
+        \item Anforderungen sind als Listeneinträge im Prodct Backlog festgehalten
+        \item \textbf{keine spezifische Entwicklungsmethode} vorgeschrieben, eher generative  Regeln im agilen Umfeld
+    \end{itemize}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.75\linewidth]{fihasjöfojl.png}
+        \label{fig:enter-label}
+    \end{figure}
+    \subsection{Risikomanagement}
+    \begin{itemize}
+        \item I\textbf{Identifikation} von Risiken
+        \item \textbf{Analyse} und \textbf{Bewertung }der Risiken
+        \item Planung von \textbf{Gegenmaßnahmen}
+        \item \textbf{Verfolgen der Risiken }und der gewählten Gegenmaßnahmen
+    \end{itemize}
+    \subsection{Risk Items and their solutions}
+    \begin{enumerate}
+        \item \textbf{Personelle Probleme: }\textit{Gegenmaßnahme:}Team Building, Morale Building, Schlüsselpersonen früh ins Projekt.
+        \item \textbf{Unrealistische Zeit- und Kostenpläne:}\textit{Gegenmaßnahme:}Detaillierte Kosten und Zeitplanung, Design to cost, inkrementelle Entwicklung, Wiederverwendung.
+        \item \textbf{Entwicklung falscher Fuktionalität}\textit{Gegenmaßnahme:} Organisationsanalyse, Nutzungsanalyse, Nutzerbefragung, Prototyping, frühes Benutzerhandbuch
+        \item \textbf{Entiwcklung der flaschen UI}\textit{Gegenmaßnahmen:} Prototyping, Nutzungsanalyse
+        \item \textbf{Gold plating} \textit{Gegenmaßnahmen:}Anforderungen zurückstellen, Kosten Nutzen Analyse, Design to cost
+        \item \textbf{Kontinuierlicher Strom von Anforderungsänderungen}\textit{Gegenmaßnahmen:} Hohe Änderungsschwelle, inkrementelle Entwicklung
+        \item \textbf{Probleme mit extern durchgeführter Aufgabe}\textit{Gegenmaßnahme:}Referenzen prüfen, Prüfungen vor der Auftragsvergabe, Prototyping, Beauftragung mehrerer Zulieferer
+        \item \textbf{Probleme mit extern entwickelten Komponenten:}\textit{Gegenmaßnahme:} Benchmarking, Modellierung, Protyping, Kompatibilitätsanalyse
+        \item \textbf{Probleme mit Echtzeit  Performanz}\textit{Gegenmaßnahme: }Simulation, Benchmarking, Modellierung, Tuning
+        \item \textbf{Überforderung der Möglichkeiten der Informatik}\textit{Gegenmaßnahmen: }technische Analyse, Kosten/nutzen Analyse, Prototyping
+    \end{enumerate}
+    \subsection{\textbf{Arten von Teams}}
+    \begin{itemize}
+        \item \textbf{Ein Personen Team}
+        \newline \textbf{Merkmal: } \textbf{Eigenständige Arbeit} von einer Person an einer Aufgabe.
+        \newline \textbf{Vorteil: } : Fast \textbf{kein Kommunikationsaufwand}.
+        \newline \textbf{Nachteil: }\textbf{Keine Gesprächspartner}, kein \textbf{Dokumentationsdruck}, Risiko des Ausfalls.
+        \item \textbf{Gruppen aus zwei Personen} ( Pair programming mit Driver und Observer)
+        \newline  \textbf{Merkmale: } durch den freien Beschluss der Beteiligten zur \textbf{Zusammenarbeit}. \textbf{Keine Führungsrolle!} (Doppel) oder  durch die Weisung an einen Helfer (Sherpa), einen Spezialisten zu unterstützen. (Tandem)
+        \newline \textbf{Vorteil: }Gespräch möglich, keine Katastrophe durch Ausfall einer Person. Sinn des Tandems
+        kann es auch sein, das Wissen des Spezialisten auf zwei Köpfe zu verteilen. Folge: Sherpa = Schüler
+        \newline \textbf{Nachteil: }Schwierig, wenn sich die beiden nicht gut verstehen
+        \item \textbf{Anarchisches Team mit autonomen Entwickler:innen.}
+        \newline \textbf{Merkmale: }\textbf{ Autonomes} Arbeiten von Entwickler:innen nach eigenen Maßstäben und Vorgaben.
+        \newline \textbf{Vorteil: } Entwickler sind \textbf{selbstbestimmt, }keine Hierarchie-Probleme,\textbf{ kaum bürokratische }Hemmnisse.
+        \newline \textbf{Nachteil: } Standards, \textbf{Normen }lassen sich\textbf{ nicht durchsetzen.} Die Entstehung der erforderlichen Resultate
+        ist Glückssache (d. h. gewisse Dokumente entstehen in aller Regel nicht). Die Organisation insgesamt ist
+        nicht lernfähig, Planung, Einführung neuer Methoden und Werkzeuge sind von der Laune der Mitarbeiter
+        abhängig.
+        \item \textbf{demokratisches Team }
+        \newline \textbf{Merkmale: }Die Beteiligten sind \textbf{grundsätzlich gleichberechtigt.} Sie erzielen durch ausreichende
+        Kommunikation einen\textbf{ Konsens} über die Ziele und Wege, und sie verhalten sich diszipliniert.
+        \newline \textbf{Vorteile: }Die\textbf{ Fähigkeiten} der Beteiligten werden optimal genutzt, Probleme werden frühzeitig erkannt und
+        gemeinsam bekämpft.
+        \newline \textbf{Nachteile: } Hoher \textbf{Kommunikationsaufwand}. Unter Umständen Paralyse (Dissens, \textbf{Fraktionsbildung})
+        \item \textbf{hierarchisches Team}
+        \newline \textbf{Merkmale: }: Die Gruppe steht unter der\textbf{ Leitung }einer Person, die für die Personalführung, je nach
+        Projektform auch für das Projekt verantwortlich ist.
+        Varianten: Gruppenleiter übernimmt Stabs- oder Linienfunktion.
+        \newline \textbf{Vorteile: }:\textbf{ Einfache Kommunikationsstruktur}, klare Zuständigkeiten, auf Mitarbeiterebene gute
+        Ersetzbarkeit.
+        \newline \textbf{Nachteile: } Lange Kommunikationswege (d. h. oft schlechte Information), der Gruppenleiter stellt ein hohes
+        Risiko dar; Gruppenmitglieder sind \textbf{kaum zur Kooperation motiviert.}
+
+        \item Chief- Programmer TeamMerkmale:
+        \newline \textbf{Merkmale: } Gruppe aus Chief Programmer und seinem Stellvertreter, Bibliothekar, der alle Verwaltungsfunktionen übernimmt, sowie einige Programmierer.
+        Kann auch weitere Spezialisten geben.
+        \newline \textbf{Vorteile: }: Die Gruppe kann — wie ein Operationsteam, das Vorbild dieser Struktur war — außerordentlich
+        \textbf{effizient arbeiten.}
+        \newline \textbf{Nachteile: }: \textbf{Hohe Ansprüche }an die Disziplin, vermutlich auch die Gefahr, dass der Chief-Programmer
+        abhebt, sich überschätzt
+    \end{itemize}
+    \subsection{\textbf{Funktionale Organisation}}
+    Hersteller hat immer wieder \textbf{ähnliche Aufgaben.} Gruppen oder Abteilungen mit \textbf{Spezialisten} für die
+    Teilaufgaben. Das Produkt entsteht durch das \textbf{Zusammenwirken der Abteilungen.}  \newline
+    Die Linienorganisation reicht aus, eine Sekundärorganisation ist nicht erforderlich. Die Strukturen sind
+    \textbf{projektunabhängig;} es gibt kein Projekt! Jede Person hat eine definierte (feste) \textbf{Rolle.}
+    Die Zwischenresultate fließen von Abteilung zu Abteilung.
+    \newline
+    \newline \textbf{Vorteile: }\textbf{stabile} Zuordnung der Mitarbeiter, keine Konflikte um Prioritäten.
+    \newline \textbf{Nachteile: }: Alles, was am Projektbegriff hängt, fehlt: Identifikation mit einem Projekt, Reaktion auf
+    Probleme, Motivation durch Ziel.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{dejaklFOPWEJÖFM.png}
+        \caption{Funktionale Organisation}
+        \label{fig:enter-label}
+    \end{figure}
+    \subsection{Aufwandsschätzungen}
+    \begin{itemize}
+        \item Expertenschätzung
+        \item Algorithmische Schätzung
+        \item Top Down: aus globalen Größen werden zu \textbf{erwartende Größen abgeleitet}.
+        \item Bottom up: aus atomaren Größen wie Codezeile wird Aufwand \textbf{abgeleitet}
+        \item \textbf{Aktivitäten-basierte} Schätzung
+        \item \textbf{Produkt basierte} Schätzung
+    \end{itemize}
+    \chapter {Modellierung}
+    \subsection{Komplexität}
+    \textbf{Detailkomplexität}: einfach viel und schwierig.
+    \newline \textbf{dynamische Komplexität:} unklare Ursache- Wirkungszusammenhänge
+    \subsection{Präskriptive und deskriptive}
+    \textbf{Präskriptiv:} existiert noch nicht
+    \newline
+    \textbf{deskriptiv:} existiert schon und beschreibt
+    \subsection{Sichten(Views) und Perspektive(Viewpoints)}
+    \textbf{Perspektive:} modelliert \textbf{System}aspekt. Menge von Sichttypen für einen \textbf{bestimmten Zweck}. Definiert \textbf{Inhalt ihrer Sicht}.
+    \newline Definiert durch die Interessengruppen/ Stakeholder.
+    \newline
+    \newline
+    \textbf{Sichttypen:} modellieren \textbf{Systemteile} unter einem \textbf{bestimmten Zweck/ bestimmter Aspekt}. Definieren die Notation und Auswahlkriterien.
+
+
+    \subsection{UML}
+    \subsection{\textbf{Komposition vs Aggregation}}
+    Beides sind Teil-Ganzes-Beziehungen zwischen Objekten (Parent und
+    Child). Bei der Aggregation besteht aber eine größere Eigenständigkeit des Teils
+    und es kann auch unabhängig vom Ganzen existieren, z.B. Studierende (Children), die einer bestimmten Vorlesung (Parent) zugeordnet sind. Wenn die Vorlesung gelöscht wird, existieren die Studierenden weiterhin. Bei der Komposition
+    dagegen ist der Lebenszyklus des Teils an das Ganze gekoppelt, d.h. das Teil
+    kann nicht ohne das Ganze existieren, z.B. die Lieferadressen eines Kunden.
+    Wenn der Kunde gelöscht wird, werden auch alle seine Adressen mitgelöscht.
+    \newline
+    \textbf{Komposition:} stirbt ohne das andere. \newline
+    \textbf{Aggregation}: gehört dazu, kann auch  ohne.
+    \subsubsection{Komponentendiagramme}
+    Modelliert die Software Architektur, Bibliotheken, Komponenten, Datenbanken, usw.
+    \section{Diagramme}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.75\linewidth]{dbHSJKLNÖFÄ.png}
+        \label{fig:enter-label}
+    \end{figure}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.75\linewidth]{goptihjüetz.png}
+        \label{fig:enter-label}
+    \end{figure}
+
+    \chapter{Architektur}
+    \textbf{Entwurf:} \textbf{Struktur} und\textbf{ Architektur }wird hier festgelegt. Spezifikation sagt nur, was das Produkt leistet, \textbf{aber nicht wie}: Architektur
+
+    \subsection{Grob und Feinentwurf}
+    \textbf{Grobentwurf: }\textbf{vereinfachte} Vorstellung der zu entwickelnden Systems zB. Systemteile und Subsysteme und deren Zusammenspiel
+    \newline
+    \textbf{Feinentwurf}: Verfeinerung der Subsysteme.
+
+    \subsection{Aspekte der Architektur}
+    \textbf{Gliederung in überschaubare Einheiten} \newline
+    \textbf{Festlegung der Lösungsstruktur} \newline
+    \textbf{Hierarchische Gliederung:} um Zusammenhänge systematisch zu entwickeln und zu verstehen.
+    \subsection{Systemsicht und statische Sicht:}
+    \textbf{Systemsicht:} zeigt, \textbf{wie} das zu entwickelnde System in die Umgebung \textbf{eingebettet} ist und wie es mit \textbf{anderen Systemen interagiert}( Systemgrenze, Schnittstellen). \newline
+    \textbf{Statische Sicht:} zeigt zentralen Komponenten und ihre Schnittstellen, in der Regel hierarchisch verfeinert.
+    \newline
+    \textbf{Dynamische Sicht:} modelliert, wie die Komponenten zur Laufzeit zusammenarbeiten. Beschränkt auf wichtige Interaktionen.
+    \subsection{Verteilungsdiagramm}
+    \begin{figure} [H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{uizteruwoik.png}
+        \label{fig:enter-label}
+    \end{figure}
+    \subsection{Modularisierung}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\linewidth]{iuhzteoqpgorsiuaef.png}
+        \caption{Prinzipien}
+        \label{fig:enter-label}
+    \end{figure}
+    Modularisierung eine Eigenschaft, wenn es dem Architekt:in gelungen ist, das System in solche Komponenten\textbf{ zu unterteilen}, dass sie möglichst unabhängig voneinander verändert und weiterentwickelt werden können.
+    \subsection{Ziele}
+    \begin{figure} [h]
+        \centering
+        \includegraphics[width=0.3\linewidth]{phzojeoph.png}
+        \label{fig:enter-label}
+    \end{figure}
+    \subsection{Separation of concerns}
+    \textbf{Trennung von Zuständigkeiten}, denn jede Komponente sollte nur für einen ganz bestimmten Aufgabenbereich zuständig sein. Also \textbf{fachliche} und \textbf{technische} Komponenten\textbf{ trennen} und Funktionalitäten eigenen Komponenten zu ordnen.
+    \subsection{Architekturmuster}
+    \textbf{Schichtenmuster}
+    \newline man zerlegt das System in Schichten, also logisch zusammenhängende Komponenten und eine Schicht stellt Dienstleistungen zur Verfügung, die an der oberen Schnittstelle der Schicht angeboten werden. Schichten\textbf{ bauen direkt aufeinander auf}.
+    \newline
+    \textbf{Drei Schichten Architektur}
+    Aus \textbf{Präsentationsschicht }( Bedienungsoberfläche, Benutzersystem), \textbf{Anwendungsschicht}( Komponenten der Funktionalität), \textbf{Datenerhaltungsschicht} (Datenbank).
+    \newline
+    \textbf{Pipe Filter Architektur}
+    Verarbeitungsschritte in Filtern realisiert, ein Filter verbraucht und erzeugt Daten.
+    Pipes leiten Ergebnisse des Filters an nachfolgende Filter weiter.
+    Das erste Filter bekommt seine Daten aus der Datenquelle, das letzte liefert sie an die Datensenke.
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.7\linewidth]{ogkrepoejogeq.png}
+        \label{fig:enter-label}
+    \end{figure}
+    \newline
+    \textbf{Microservices Architektur}
+    Viele kleine separat installierbaren Einheiten, die die Architektur der Software bilden, aus mehreren Service Komponenten.
+
+    \subsection{Architecutal decision AD}
+    Technologieauswahl (Programmiersprache, IDE, Bibliothek oder Features)
+    \newline
+    \textbf{Y Statements}
+    Zur Strukturierung von Architekturentscheidungen.
+    \begin{enumerate}
+        \item \textbf{Context:} funktionale Anforderungen, Architekturkomponente
+        \item \textbf{Facing:} nicht funktionale Anforderungen
+        \item \textbf{We decided:} Entscheidungsergebnis (wichtigster Teil)
+        \item \textbf{and negledcted:} nicht gewählte Alternativen
+        \item \textbf{to achieve:} Vorteile, die vollständige oder teilweise Erfüllung von Anforderungen
+        \item \textbf{acceoting that:} Nachteile oder andere Konsequenzen.
+    \end{enumerate}
+    \subsection{Entwurfsprinzipien \textbf{ SOLID}}
+    \textbf{S}ingle Responsibility (eine Aufgabe, Modularität)
+    \newline
+    \textbf{O}pen closed (Information hiding und open für Vererbung) \newline
+    \textbf{L}iskovian Substitution Principle \newline
+    \textbf{I}nterface segregation
+    \newline
+    \textbf{D}ependency inversion (alles von abstrakten Klassen abhängig machen)
+    \subsection{Law of Demeter}
+    Methode M eines Objekts O sollte nur auf Objekt, Parameter von M, Objekte die M selbst instanziiert und Objekte der eigenen Komponente zugreifen können.
+    \section{Entwurfsmuster}
+    \subsection{Singelton}
+    Eine global verfügbare Instanz pro Klasse blyat.
+    Problem: keine Redefinition möglich.
+    \subsection{Composite}
+    hierarchische Teil- Ganzes Beziehung
+
+    \section{Domain driven design}
+    Fokussiert auf die Anwendungsdomände und die Fachlichkeit, erlaubt durchgängige Modellierung.
+    BC, Domains, entities und Aggregates bilden die statische Sicht, domain Events ergänzen die dynamische Sicht.
+    Event Storming ist ein Entwurfshilfsmittel u im Team mit den fachexpert:innen an einem Entwurf zu arbeiten.
+    \subsection{Strategischer und taktischer Entwurf}
+    \textbf{strategischer Entwurf:} grobe Strukturen, Wichtigkeit für das Geschäft, Prioritäten, mit bounded comtext arbeiten.
+    \newline
+    \textbf{Taktischer Entwurf:} feine Details, bounded context weiter ausarbeiten um sie in die technische Umsetzung zu bringen (aggregate eingesetzt)
+    \subsection{ \textbf{Bounded context}}
+    Begrenzter Kontext mit einheitlicher Sprache damit alle Beteiligten auf dem gleichen Wissensstand sind. Beschreibt zuerst den Problemraum, wandert aber dann in den Lösungsraum und wird sich in der Form von Softwareartefakten in der fertigen Software wiederfinden.
+    Auch viele Subdomains weil ohne bounded context würde das Domänenmodell immer komplexer werden.
+    \begin{figure} [h]
+        \centering
+        \includegraphics[width=0.7\linewidth]{image.png}
+        \caption{Beispiel bounded context für unterschiedliche Kontexte}
+        \label{fig:enter-label}
+    \end{figure}
+    \begin{figure} [h]
+        \centering
+        \includegraphics[width=0.25\linewidth]{zwiozuehofiqer.png}
+        \caption{Bounded context}
+        \label{fig:enter-label}
+    \end{figure}
+    \subsection{Subdomains}
+    \begin{enumerate}
+        \item \textbf{Core domains: } strategisch Domäne, in die investiert werden soll und die den \textbf{Hauptwettbewerbsvorteil} darstellt.
+        \item \textbf{Supporting Subdomain:} individuelle Entwicklung ist notwendig, da es spezifisch für die Core Domain ist und
+        diese unterstützt.
+        \item \textbf{Generic Subdomain: } kann evtl. als Standardsoftware eingekauft oder an anderes Unternehmen abgegeben
+        werden.
+        darstellt
+    \end{enumerate}
+    \subsection{Context Mapping}
+    \subsection{Ubiquitous language}
+    für einen Bounded Context gültige Sprache erarbeitet, die alle, die in diesem Bounded Context arbeiten
+    verstehen können. Die Sprache soll präzise aber knapp sein.
+    \subsection{Entity}
+    Modelliert ein individuelles Ding mit Identität, einfach eine Entität/Objekt blyat.
+    \subsection{DDD aggregate}
+    \textbf{Problem: } in einem bounded Contect können viele Entitäten enthalten sein, schwerer Überblick.
+    \newline
+    \textbf{Lösung: } nicht alle Entitäten sind eigenständig, einige können in Aggregaten zusammengefasst und behandelt werden.
+    \newline
+    Muster zur Modellierung auf Feindesign-Ebene zur strukturierung von Entitäten.
+    \textbf{Achtung: } bruder nicht mit Collectionsverwechseln, die sind generisch und Aggregates beschreiben einen fachlichen Zusammenhang, der aber wiederum technisch durch eine Collection umgesetzt werde \textit{kann}.
+
+    \subsection{Aggregate}
+    Zwei oder mehrere Entitäen, wobei eines das Aggregate root (gibt dem Aggregate den Namen) ist. Kann auch value objects enthalten. Ein Aggregate bildet eine \textbf{transaktionale Konsistenzgruppe}. Also alle Elemente innerhalb eines Aggregates sind bezüglich der Geschäftsregeln \textbf{konsistent}.
+
+    \subsection{Value Object}
+    Ein unveränderliches, konzeptionelles Ganzes. Einfach ein Wert der keine Identiät besitzt, weil es ein Wert/ Attribut ist.
+
+    \subsection{Domain Event}
+    Protokolliert ein Ereignis in einem BC, das \textbf{fachlich relevant} ist.  in einem
+    Bounded Context, das fachlich relevant ist. Der Name des
+    Domain-Event-Typs sollte eine Aussage über ein
+    \textbf{vergangenes Ereignis} sein, also ein Verb in der
+    Vergangenheitsform.
+    Sie bringen die \textbf{dynamische Sicht} in den Entwurf.
+    Der Name muss konsistent zur Ubiquitous Language sein.
+    \section{Wartung}
+    \textbf{Erblast:} wird dringend gebraucht aber von niemanden verstanden lol. Vor allem wenn: sehr große Software, Entwickler:innen und Architekten nicht mehr verfügbar, veraltete Methoden und Sprachen, obsolete oder keine Dokumentation, basiert auf veralteter Hardware.
+    \subsection{Risiken und Probleme}
+    \textbf{Changing prioties} Wartungstätigkeiten werden oft unterbrochen.
+    \newline
+    \textbf{Inadequate testing methods} Der Regressionstest nach der Wartung bereitet Probleme, weil spezielles
+    Know-how fehlt und weil die Testfälle und Testdaten nicht ausreichen
+    \newline
+    \textbf{Performance measuremenrs difficulties}
+    Nicht definiert, wie die Wartung durchgeführt werden  soll.
+    \newline
+    \textbf{System doc is incomplete}
+    \newline
+    \textbf{Adapting to a rapidly changing business environment}
+    \subsection{Wartungskrise 1980}
+    Wegen mangelnde Qualität der Entwicklung mit Ziel der Verbesserung der Wartbarkeit durch Prozesse, Testen und OO.
+    \subsection{Legacy Software 1990}
+    Wunsch nach Ablösung von 30 Jahre alter Software, weil hohe Kosten und Risiko.
+    \subsection{Langelebige Systeme 2000}
+    Die Relevanz der Systeme wird
+    wahrgenommen
+    Neue Forschungsgebiete, wie Clone Detection,
+    Software-Leitstände, Software-Verjüngung,
+    \subsection{Continous engineering}Continuous Integration and Delivery,
+    Agile Vorgehensmodelle mit kurzen Iterationen, kein klarer Unterschied zwischen
+    Initialentwicklung und Wartung erkennbar.
+    \subsection{Klassen von Wartungsfällen}
+    \begin{itemize}
+        \item perfective maintenance
+        \item adaptive maintenance
+        \item corrective maintenance
+        \item preventive maintenance
+
+    \end{itemize}
+    \subsection{Lehmans Gesetze der Software Evolution}
+    \begin{itemize}
+        \item \textbf{Continuing change:} ein System, das benutzt wird muss kontinuierlich verfeinert werden.
+        \item \textbf{Increasing complexity}
+        \item \textbf{Self regulation: } die Evolution soll self regulating sein.
+        \textbf{Conservation of organizational stability}
+        \item \textbf{Conservation of familiarity}
+        \item \textbf{Continuing growth}
+        \item \textbf{Declining quality:} passiert mit der Qualität außer es wird rigoros an Wartungsaufgaben gemacht
+        \item \textbf{Feedback system: }Programming processes constitute multi-loop,
+        multi-level feedback systems and must be treated as such to be
+        successfully modified or improved.
+    \end{itemize}
+    \subsection{Auswirkungsanalyse}
+    Zur Abschätzung der Kosten einer Änderung, Verstehen der Bedeutung und Abhängigkeiten der Artefakte, Dokumentation und Abschätzung der Qualität der Änderung und Festlegen, was in Regressionstests überprüft werden muss.
+    \subsection{Nachverfolgbarkeit/ Traceability}
+    \textbf{Verikale Nachverfolgbarkeit:}Abhängigkeit zwischen Teilen eines Artefakts
+    \newline
+    \textbf{horizontale Nachverfolgbarkeit:} die Abhängigkeit über Artefaktsammlungen hinweg.
+    \subsection{Ablösung}
+    Komplette Ersetzung zu teuer, zeitaufwendig und riskant.
+    \clearpage
+    \subsection{Reengineering}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\linewidth]{hirqjfijiew.png}
+        \label{fig:enter-label}
+    \end{figure}
+    \section{Dokumentation}
+    \subsection{Arten von Dokumentation}
+    \begin{itemize}
+        \item \textbf{integrierte Dokumentation:}die im\textbf{ Programm }
+        enthaltenen Kommentare, Bezeichner, das Layout
+        \item \textbf{separate Dokumentation: } ist der Teil der Software, der
+        \textbf{nicht }in den Programmen enthalten ist.
+
+    \end{itemize}
+\end{document}
+
